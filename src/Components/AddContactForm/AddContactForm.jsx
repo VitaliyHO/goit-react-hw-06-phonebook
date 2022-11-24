@@ -61,6 +61,6 @@ export const AddContactForm = ({ formSubmit }) => {
   );
 };
 
-Form.propTypes = {
+AddContactForm.propTypes = {
     formSubmit: PropTypes.func.isRequired
 }
