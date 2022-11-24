@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Button, FlexBox, IMG, Li, P } from "../../../AppStyled";
+import { AboutContacnBox, Button, FlexBox, IMG, Li, P } from "../../../AppStyled";
 
 export const ContactsItem = ({ arrayOfContacts, deleteContactHandler }) => {
   return arrayOfContacts.map(({ id, name, number }) => {
@@ -10,10 +10,10 @@ export const ContactsItem = ({ arrayOfContacts, deleteContactHandler }) => {
           src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/null/external-user-user-tanah-basah-basic-outline-tanah-basah-4.png"
           alt="user"
         />
-        <div>
+        <AboutContacnBox>
           <P>{name}</P>
           <P>{number}</P>
-        </div>
+        </AboutContacnBox>
         </FlexBox>
         <Button
           id={id}

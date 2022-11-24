@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { nanoid } from "nanoid";
 import PropTypes from 'prop-types';
-import { AddButton, Button, Form, Input } from '../../AppStyled.js'
+import { AddButton, Form, Input } from '../../AppStyled.js';
 
 export const AddContactForm = ({ formSubmit }) => {
+
   const [userName, setUserName] = useState("");
   const [number, setNumber] = useState("");
 
@@ -22,7 +23,7 @@ export const AddContactForm = ({ formSubmit }) => {
   };
 
   return (
-    <div className="container">
+    <div>
       <Form onSubmit={handleSubmit}>
         <label htmlFor={inputNameId}>
           Name

@@ -43,14 +43,21 @@ export const Li = styled.li`
 export const FlexBox = styled.div`
   display: flex;
   align-items: center;
+  width: 100%;
 `;
 
 export const IMG = styled.img`
   margin-right: 10px;
 `;
 
+export const AboutContacnBox = styled.div`
+  max-width: 80%;
+`;
+
 export const P = styled.p`
   margin: 0;
+  width: 100%;
+  // word-break: keep-all;
 `;
 
 export const Button = styled.button`
