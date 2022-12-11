@@ -50,7 +50,7 @@ export const IMG = styled.img`
   margin-right: 10px;
 `;
 
-export const AboutContacnBox = styled.div`
+export const AboutContactBox = styled.div`
   max-width: 80%;
 `;
 

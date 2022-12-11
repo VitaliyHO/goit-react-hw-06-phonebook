@@ -1,39 +1,39 @@
 import PropTypes from "prop-types";
-import { AboutContacnBox, Button, FlexBox, IMG, Li, P } from "../../../AppStyled";
+import { AboutContactBox, Button, FlexBox, IMG, Li, P } from "../../../AppStyled";
+import { useDispatch } from "react-redux";
+import { deleteContact } from "../../../redux/contactsSlice";
 
-export const ContactsItem = ({ arrayOfContacts, deleteContactHandler }) => {
-  return arrayOfContacts.map(({ id, name, number }) => {
+
+
+export const ContactsItem = ({ contact }) => {
+  
+  const dispatch = useDispatch();
+
+  const handleDelete = () =>{
+    dispatch(deleteContact(contact.id))};
+
     return (
-      <Li key={id}>
+      <Li key={contact.id}>
         <FlexBox>
         <IMG
           src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/null/external-user-user-tanah-basah-basic-outline-tanah-basah-4.png"
           alt="user"
         />
-        <AboutContacnBox>
-          <P>{name}</P>
-          <P>{number}</P>
-        </AboutContacnBox>
+        <AboutContactBox>
+          <P>{contact.name}</P>
+          <P>{contact.number}</P>
+        </AboutContactBox>
         </FlexBox>
         <Button
-          id={id}
           type="button"
-          onClick={deleteContactHandler}
+          onClick={handleDelete}
         >
           Delete
         </Button>
       </Li>
     );
-  });
-};
+  };
 
 ContactsItem.propTypes = {
-  arrayOfContacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    }).isRequired
-  ).isRequired,
-  deleteContactHandler: PropTypes.func.isRequired,
+    contact: PropTypes.object.isRequired,
 };
